@@ -1,0 +1,57 @@
+<div class = "container-fluid">
+
+  <h4>API - Partners</h4>
+
+<p> Find 	<input type="text" placeholder="Search" ng-model="search" /> </p>
+</div>
+
+<div class = "container-fluid">
+
+    <div class="row">
+
+        <table class="table table-hover" ng-controller="rehabCtrl">
+          <thead>
+            <tr>
+              <th>Affiliate ID</th>
+              <th>Campaign ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Phone #</th>
+              <th>Email</th>
+              <th>City</th>
+              <th>State</th>
+              <th>ZIP</th>
+              <th>IP</th>
+              <th>Date</th>
+              <th>Source URL</th>
+              <th>Insurance</th>
+              <!--th>Lead Date</th-->
+
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr data-ng-repeat = "partners in partnerlist.slice().reverse() | filter: search"  >
+              <td> {{partners.affiliateID}} </td>
+              <td> {{partners.campaignID}} </td>
+              <td> {{partners.firstName}} </td>
+              <td> {{partners.lastName}} </td>
+              <td> {{partners.phone}} </td>
+              <td> {{partners.email}} </td>
+              <td> {{partners.city}} </td>
+              <td> {{partners.state}} </td>
+              <td> {{partners.zipCode}} </td>
+              <td> {{partners.ip}} </td>
+              <td> {{partners.createdAt}} </td>
+              <td> {{partners.sourceURL}} </td>
+              <td> {{partners.insuranceType}} </td>
+              <!--td> {{partners.leadDate}} </td-->
+              <!--td><a href="#info/{{partners._id}}" class = "btn btn-primary">Info</a></td-->
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+    </div>

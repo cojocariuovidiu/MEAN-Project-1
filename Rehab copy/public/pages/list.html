@@ -1,0 +1,49 @@
+<div class = "container-fluid">
+
+  <h4>Landing Page Form</h4>
+
+<p> Find 	<input type="text" placeholder="Search" ng-model="search" /> </p>
+</div>
+
+<div class = "container-fluid">
+
+    <div class="row">
+
+        <table class="table table-hover" ng-controller="rehabCtrl">
+          <thead>
+            <tr>
+              <th>Affiliate ID</th>
+              <th>Campaign ID</th>
+              <th>Name</th>
+              <th>Phone #</th>
+              <th>Email</th>
+              <th>City</th>
+              <th>State</th>
+              <th>ZIP</th>
+              <th>IP</th>
+              <th>Date</th>
+
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr data-ng-repeat = "forms in formlist.slice().reverse() | filter: search"  >
+              <td> {{forms.affiliateID}} </td>
+              <td> {{forms.campaignID}} </td>
+              <td> {{forms.name}} </td>
+              <td> {{forms.phone}} </td>
+              <td> {{forms.email}} </td>
+              <td> {{forms.city}} </td>
+              <td> {{forms.state}} </td>
+              <td> {{forms.zipCode}} </td>
+              <td> {{forms.ip}} </td>
+              <td> {{forms.createdAt | date }} </td>
+              <!--td><a href="#info/{{forms._id}}" class = "btn btn-primary">Info</a></td-->
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+    </div>
